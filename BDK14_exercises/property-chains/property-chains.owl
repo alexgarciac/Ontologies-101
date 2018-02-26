@@ -1,0 +1,53 @@
+Prefix: : <http://example.org/>
+
+Ontology: <http://example.org/property-chains/>
+
+## property chains
+
+Class: :Organism
+
+Class: :Human
+  SubClassOf: :Organism
+Class: :Cat
+  SubClassOf: :Organism
+Class: :Male
+Class: :Female
+
+ObjectProperty: :sibling-of
+ObjectProperty: :sister-of
+  Domain: :Female
+ObjectProperty: :has-sister
+  Range: :Female
+ObjectProperty: :parent-of
+ObjectProperty: :has-parent
+ObjectProperty: :brother-of
+ObjectProperty: :has-brother
+ObjectProperty: :has-father
+ObjectProperty: :has-mother
+ObjectProperty: :mother-of
+ObjectProperty: :father-of
+ObjectProperty: :has-uncle
+ObjectProperty: :uncle-of
+ObjectProperty: :nephew-of
+ObjectProperty: :niece-of
+
+Individual: :Nimbus
+ Types: :Cat
+ Facts: :brother-of :Talisker
+
+Individual: :Talisker
+ Types: :Cat
+
+Individual: :Chris
+ Facts: :brother-of :Sam
+
+Individual: :Sam
+ Facts: :father-of :Jasper
+ Facts: :father-of :Clem
+
+Individual: :Jasper
+ Facts: :brother-of :Clem
+
+Individual: :Clem
+ Facts: :sister-of :Jasper
+
